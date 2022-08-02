@@ -86,6 +86,9 @@ def set_cfg(cfg):
     # If do benchmark analysis
     cfg.benchmark = False
 
+    # If not, do not allow additional keys
+    cfg.new_allowed = True
+
     # ----------------------------------------------------------------------- #
     # Globally shared variables:
     # These variables will be set dynamically based on the input dataset

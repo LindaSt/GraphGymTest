@@ -13,7 +13,7 @@ from torch_geometric.data.makedirs import makedirs
 
 try:  # Define global config object
     from yacs.config import CfgNode as CN
-    cfg = CN()
+    cfg = CN(new_allowed=True)
 except ImportError:
     cfg = None
     warnings.warn("Could not define global config object. Please install "
@@ -85,9 +85,6 @@ def set_cfg(cfg):
 
     # If do benchmark analysis
     cfg.benchmark = False
-
-    # If not, do not allow additional keys
-    cfg.new_allowed = True
 
     # ----------------------------------------------------------------------- #
     # Globally shared variables:
